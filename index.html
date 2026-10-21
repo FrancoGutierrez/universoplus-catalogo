@@ -3,1100 +3,2141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>UniversoPlus | Catálogo Oficial de Moda Curvy & Plus Size</title>
-    <!-- Google Fonts -->
+    <title>UniversoPlus | Boutique Exclusiva de Moda Curvy & Plus Size</title>
+    
+    <!-- Meta SEO & Social -->
+    <meta name="description" content="UniversoPlus - Boutique exclusiva de moda femenina en tallas plus (curvy / plus-size). Colecciones diseñadas para abrazar y destacar tus curvas. Envíos a todo el Perú.">
+    <meta name="theme-color" content="#3D1E38">
+    
+    <!-- Favicon con Logo -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* ==========================================================================
+           1. SISTEMA DE DISEÑO & VARIABLES CSS (QUIET LUXURY UNIVERSOPLUS)
+           ========================================================================== */
         :root {
-            --primary: #e11d48;
-            --primary-hover: #be123c;
-            --primary-light: #ffe4e6;
-            --primary-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 50%, #9f1239 100%);
-            --whatsapp: #25D366;
-            --whatsapp-dark: #128C7E;
-            --dark: #0f172a;
-            --slate: #475569;
-            --light-bg: #fff5f6;
-            --card-bg: #ffffff;
-            --border-color: #ffe4e6;
-            --shadow-sm: 0 2px 8px rgba(225, 29, 72, 0.04);
-            --shadow-md: 0 8px 24px -4px rgba(225, 29, 72, 0.08), 0 2px 6px -1px rgba(0,0,0,0.04);
-            --shadow-lg: 0 20px 35px -5px rgba(225, 29, 72, 0.12), 0 10px 15px -5px rgba(0,0,0,0.04);
+            /* Paleta Oficial */
+            --bg-main: #FAF6F2;          /* Crema Marfil Suave (Fondo General) */
+            --bg-secondary: #F3ECE4;     /* Arena Cálido Suave */
+            --bg-tertiary: #EDE4DB;      /* Tono neutro sutil */
+            --primary: #3D1E38;          /* Ciruela Profundo / Deep Plum */
+            --primary-hover: #2B1427;    /* Ciruela Intenso Hover */
+            --accent: #C88A78;           /* Oro Rosa / Terracota Suave */
+            --accent-hover: #B57664;     /* Terracota Oscuro Hover */
+            --accent-soft: #F5EAE6;      /* Acento súper suave */
+            --text-primary: #3D1E38;     /* Texto Principal */
+            --text-secondary: #6E5A6B;   /* Gris Ciruela Apagado */
+            --text-muted: #9A8797;       /* Texto suave */
+            --border-color: #E6DCD2;     /* Bordes finos 1px */
+            --border-accent: rgba(200, 138, 120, 0.4);
+            
+            /* Fondos de Tarjetas y Elementos */
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-bg-solid: #FFFFFF;
+            
+            /* Sombras Cálidas & Sutiles */
+            --shadow-subtle: 0 4px 20px rgba(61, 30, 56, 0.04);
+            --shadow-card: 0 8px 30px rgba(61, 30, 56, 0.06);
+            --shadow-hover: 0 16px 38px rgba(61, 30, 56, 0.12);
+            --shadow-accent: 0 8px 24px rgba(200, 138, 120, 0.3);
+            
+            /* Tipografías */
+            --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            
+            /* Transiciones */
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
+        /* Reset & Base */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
         }
 
-        body {
-            background-color: #faf7f8;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--dark);
-            padding-bottom: 5rem;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Top Announcement Bar */
-        .top-bar {
-            background: var(--dark);
-            color: #fce7f3;
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 3rem;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input {
+            font-family: inherit;
+        }
+
+        /* ==========================================================================
+           2. TOP ANNOUNCEMENT BAR
+           ========================================================================== */
+        .top-announcement {
+            background-color: var(--primary);
+            color: #FAF6F2;
+            padding: 0.6rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
             text-align: center;
-            padding: 0.55rem 1rem;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(200, 138, 120, 0.2);
+            position: relative;
+            z-index: 100;
         }
 
-        /* Header / Navbar */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
+        .top-announcement span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .top-announcement .accent-star {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           3. NAVBAR STICKY CON GLASSMORPHISM
+           ========================================================================== */
+        .navbar-sticky {
             position: sticky;
             top: 0;
-            z-index: 90;
+            z-index: 95;
+            background: rgba(250, 246, 242, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
         }
 
-        .header-container {
-            max-width: 1300px;
+        .nav-container {
+            max-width: 1380px;
             margin: 0 auto;
-            padding: 0.85rem 1.25rem;
+            padding: 0.85rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
-        .logo-area {
+        /* Brand / Logo */
+        .brand-logo-link {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
             text-decoration: none;
         }
 
-        .logo-title {
-            font-family: 'Playfair Display', serif;
+        .brand-logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: var(--font-serif);
             font-size: 1.85rem;
             font-weight: 700;
             color: var(--primary);
-            letter-spacing: -0.5px;
-            line-height: 1.1;
+            letter-spacing: 0.03em;
+            line-height: 1;
             display: flex;
-            align-items: center;
-            gap: 0.3rem;
+            align-items: baseline;
         }
 
-        .logo-title span {
-            color: var(--dark);
+        .brand-name .brand-star {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-left: 2px;
         }
 
-        .logo-tagline {
-            font-size: 0.68rem;
+        .brand-tagline {
+            font-size: 0.65rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.8px;
-            color: var(--slate);
-            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--accent);
+            margin-top: 0.2rem;
         }
 
-        .header-actions {
+        /* Nav Links */
+        .nav-links {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1.8rem;
+            list-style: none;
         }
 
-        /* Cart Trigger Button */
-        .cart-trigger-btn {
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            padding: 0.65rem 1.2rem;
+        .nav-link-item a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.3rem 0;
+        }
+
+        .nav-link-item a:hover {
+            color: var(--primary);
+        }
+
+        .nav-link-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link-item a:hover::after {
+            width: 100%;
+        }
+
+        /* Nav Actions (Search & Cart) */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-size-guide-nav {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.55rem 1.1rem;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-size-guide-nav:hover {
+            border-color: var(--accent);
+            color: var(--primary);
+            background: var(--bg-secondary);
+        }
+
+        .btn-cart-nav {
+            background: var(--primary);
+            color: #FAF6F2;
+            border: none;
+            padding: 0.65rem 1.35rem;
+            border-radius: 50px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.35);
-            transition: all 0.25s ease;
+            gap: 0.6rem;
+            box-shadow: 0 4px 18px rgba(61, 30, 56, 0.18);
+            transition: var(--transition-smooth);
             position: relative;
         }
 
-        .cart-trigger-btn:hover {
+        .btn-cart-nav:hover {
+            background: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.45);
+            box-shadow: 0 8px 24px rgba(61, 30, 56, 0.28);
         }
 
-        .cart-count-badge {
-            background: white;
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 800;
+        .cart-badge-count {
+            background: var(--accent);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
             min-width: 20px;
             height: 20px;
             border-radius: 50%;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 0 4px;
         }
 
-        /* Banner Hero */
-        .hero-banner {
-            max-width: 1300px;
-            margin: 1.5rem auto 1rem;
-            padding: 0 1.25rem;
+        /* ==========================================================================
+           4. HERO SECTION EDITORIAL (ESTILO REVISTA DE MODA DE LUJO)
+           ========================================================================== */
+        .hero-editorial {
+            max-width: 1380px;
+            margin: 2rem auto 2.5rem;
+            padding: 0 1.5rem;
         }
 
-        .hero-card {
-            background: linear-gradient(135deg, #fff0f3 0%, #ffe4e6 50%, #fecdd3 100%);
-            border-radius: 1.75rem;
-            padding: 2.2rem 1.8rem;
-            border: 1px solid #fda4af;
-            box-shadow: var(--shadow-md);
+        .hero-grid {
+            background: var(--bg-secondary);
+            border-radius: 2rem;
+            border: 1px solid var(--border-color);
+            padding: 3.5rem 3rem;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3.5rem;
+            align-items: center;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            box-shadow: var(--shadow-card);
         }
 
-        .hero-card::after {
-            content: "✨";
+        /* Fondo sutil tipo aura */
+        .hero-grid::before {
+            content: '';
             position: absolute;
-            right: 1.5rem;
-            bottom: -0.5rem;
-            font-size: 6rem;
-            opacity: 0.15;
+            top: -20%;
+            right: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(200, 138, 120, 0.18) 0%, rgba(243, 236, 228, 0) 70%);
+            border-radius: 50%;
             pointer-events: none;
         }
 
-        .hero-badge {
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            z-index: 2;
+        }
+
+        .hero-pill-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            background: rgba(225, 29, 72, 0.12);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.3rem 0.8rem;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--border-color);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
             border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
             width: fit-content;
         }
 
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 3.5vw, 2.3rem);
-            color: var(--dark);
-            font-weight: 700;
-            line-height: 1.2;
+        .hero-headline {
+            font-family: var(--font-serif);
+            font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.12;
+            letter-spacing: -0.01em;
         }
 
-        .hero-desc {
-            font-size: 0.95rem;
-            color: var(--slate);
-            max-width: 650px;
-            line-height: 1.5;
+        .hero-headline em {
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 500;
         }
 
-        /* Controls: Search & Category Filter */
-        .controls-wrapper {
-            max-width: 1300px;
-            margin: 1rem auto 1.5rem;
-            padding: 0 1.25rem;
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            line-height: 1.65;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            align-items: center;
+            gap: 1.1rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
         }
 
-        .search-box {
-            position: relative;
-            width: 100%;
-        }
-
-        .search-box input {
-            width: 100%;
-            background: white;
-            border: 1.5px solid var(--border-color);
-            padding: 0.85rem 1.2rem 0.85rem 2.8rem;
+        .btn-hero-primary {
+            background: var(--primary);
+            color: #FAF6F2;
+            padding: 0.95rem 2.2rem;
             border-radius: 50px;
             font-size: 0.92rem;
-            font-family: inherit;
-            color: var(--dark);
-            outline: none;
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .search-box input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.15);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1.1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 1.1rem;
-            pointer-events: none;
-        }
-
-        .category-pills {
-            display: flex;
-            gap: 0.5rem;
-            overflow-x: auto;
-            padding-bottom: 0.4rem;
-            scrollbar-width: none;
-        }
-
-        .category-pills::-webkit-scrollbar {
-            display: none;
-        }
-
-        .pill-btn {
-            background: white;
-            border: 1px solid var(--border-color);
-            color: var(--slate);
-            padding: 0.5rem 1.15rem;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            white-space: nowrap;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            border: 1px solid var(--primary);
             cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 6px 22px rgba(61, 30, 56, 0.22);
         }
 
-        .pill-btn:hover {
-            border-color: var(--primary);
+        .btn-hero-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(61, 30, 56, 0.3);
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
             color: var(--primary);
+            padding: 0.95rem 2rem;
+            border-radius: 50px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            border: 1.5px solid var(--accent);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .pill-btn.active {
-            background: var(--dark);
+        .btn-hero-secondary:hover {
+            background: var(--accent);
             color: white;
-            border-color: var(--dark);
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-accent);
         }
 
-        /* Products Grid */
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 1.25rem;
-        }
-
-        .productos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.8rem;
-        }
-
-        .producto-card {
-            background: var(--card-bg);
-            border-radius: 1.6rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid #fff1f2;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        .hero-trust-bullets {
             display: flex;
-            flex-direction: column;
-            position: relative;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
         }
 
-        .producto-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-            border-color: #fecdd3;
+        .hero-trust-bullets span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
         }
 
-        .img-area {
+        /* Hero Right Column: Arched Fashion Frame */
+        .hero-visual {
             position: relative;
-            background: #fff;
-            padding: 1.25rem 1rem;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .editorial-arch-frame {
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 3 / 4;
+            border-radius: 180px 180px 2rem 2rem;
             overflow: hidden;
+            border: 4px solid #FFFFFF;
+            box-shadow: var(--shadow-hover);
+            background: #EFE6DD;
+        }
+
+        .editorial-arch-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .editorial-arch-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        .floating-editorial-card {
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.4rem;
+            border-radius: 1.25rem;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            max-width: 260px;
+        }
+
+        .floating-card-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 240px;
-            border-bottom: 1px solid #fff1f2;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .producto-img {
-            max-height: 220px;
-            max-width: 100%;
-            object-fit: contain;
-            transition: transform 0.4s ease;
+        .floating-card-title {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
         }
 
-        .producto-card:hover .producto-img {
+        .floating-card-sub {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+        }
+
+        /* ==========================================================================
+           5. FILTROS INTELIGENTES Y SELECTOR DE TALLAS RÁPIDO
+           ========================================================================== */
+        .filters-section {
+            max-width: 1380px;
+            margin: 0 auto 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .filters-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 1.5rem 1.8rem;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Search & Size Guide Button in same line */
+        .filter-top-bar {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-icon-svg {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .search-input-field {
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 0.85rem 1.2rem 0.85rem 3rem;
+            border-radius: 50px;
+            font-size: 0.92rem;
+            color: var(--text-primary);
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .search-input-field:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(200, 138, 120, 0.18);
+        }
+
+        .btn-open-size-table {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--primary);
+            padding: 0.8rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .btn-open-size-table:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            color: var(--accent-hover);
+        }
+
+        /* Category Filter Pills */
+        .category-filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .filter-label-title {
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .pills-scroll-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            overflow-x: auto;
+            padding-bottom: 0.35rem;
+            scrollbar-width: none;
+        }
+
+        .pills-scroll-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-pill-btn {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.55rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.84rem;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-pill-btn:hover {
+            border-color: var(--accent);
+            color: var(--primary);
+            background: var(--bg-main);
+        }
+
+        .filter-pill-btn.active {
+            background: var(--primary);
+            color: #FAF6F2;
+            border-color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(61, 30, 56, 0.2);
+        }
+
+        /* Quick Size Selector Pills */
+        .size-filter-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .size-pill-tag {
+            background: transparent;
+            border: 1.5px solid var(--border-color);
+            color: var(--text-primary);
+            min-width: 46px;
+            height: 38px;
+            padding: 0 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .size-pill-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .size-pill-tag.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 12px rgba(200, 138, 120, 0.3);
+        }
+
+        /* ==========================================================================
+           6. PRODUCT CARDS & GRID (QUIET LUXURY 3:4 PROPORTIONS)
+           ========================================================================== */
+        .catalog-container {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .catalog-header-meta {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 1.6rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.8rem;
+        }
+
+        .catalog-heading-title {
+            font-family: var(--font-serif);
+            font-size: 1.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: -0.01em;
+        }
+
+        .catalog-count-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .products-grid-editorial {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 2.2rem 1.8rem;
+        }
+
+        /* Tarjeta de Producto */
+        .product-editorial-card {
+            background: var(--card-bg-solid);
+            border-radius: 1.35rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .product-editorial-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--border-accent);
+        }
+
+        /* Contenedor de Imagen Proporción Vertical 3:4 */
+        .product-media-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #F4EFEB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-editorial-card:hover .product-main-img {
             transform: scale(1.06);
         }
 
-        .badge-discount {
+        /* Floating Badges */
+        .badge-floating-corner {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: var(--primary-gradient);
+            z-index: 3;
+            background: var(--accent);
             color: white;
             font-size: 0.72rem;
-            font-weight: 800;
-            padding: 0.3rem 0.7rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.08em;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
-        .card-info {
-            padding: 1.3rem;
-            flex: 1;
+        .badge-discount-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 3;
+            background: var(--primary);
+            color: #FAF6F2;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.3rem 0.65rem;
+            border-radius: 50px;
+        }
+
+        /* Quick View Overlay on Hover */
+        .quick-view-overlay {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: 4;
+            width: calc(100% - 2rem);
+        }
+
+        .product-editorial-card:hover .quick-view-overlay {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .btn-quick-add {
+            width: 100%;
+            background: rgba(250, 246, 242, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            color: var(--primary);
+            padding: 0.7rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-quick-add:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Detalles del Producto */
+        .product-info-block {
+            padding: 1.35rem 1.25rem 1.25rem;
             display: flex;
             flex-direction: column;
+            gap: 0.9rem;
+            flex-grow: 1;
             justify-content: space-between;
-            gap: 0.8rem;
         }
 
-        .card-meta {
+        .product-meta-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 0.5rem;
-        }
-
-        .categoria-tag {
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.74rem;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 0.25rem 0.65rem;
-            border-radius: 50px;
+            letter-spacing: 0.08em;
+            font-weight: 600;
         }
 
-        .producto-nombre {
-            font-size: 0.96rem;
-            font-weight: 700;
-            color: var(--dark);
-            line-height: 1.45;
-            min-height: 2.8rem;
+        .product-item-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.3;
+            min-height: 3.2rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
-        /* Size Selector inside card */
-        .size-section {
+        /* Bolitas de Colores */
+        .color-swatches-row {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .color-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+
+        /* Selector de Tallas en Tarjeta */
+        .size-selector-box {
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
         }
 
-        .size-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--slate);
+        .size-box-header {
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
         }
 
-        .size-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-        }
-
-        .size-btn {
-            background: #f8fafc;
-            border: 1.5px solid #e2e8f0;
-            color: var(--dark);
-            padding: 0.25rem 0.6rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .size-btn:hover {
-            border-color: var(--primary);
+        .size-box-header strong {
             color: var(--primary);
         }
 
-        .size-btn.selected {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+        .sizes-pill-list {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
         }
 
-        /* Price display */
-        .precio-box {
+        .card-size-btn {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.65rem;
+            border-radius: 50px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .card-size-btn:hover {
+            border-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .card-size-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Bloque de Precios */
+        .product-pricing-row {
             display: flex;
             align-items: baseline;
-            gap: 0.5rem;
+            gap: 0.65rem;
             margin-top: 0.2rem;
         }
 
-        .precio-actual {
+        .current-price-tag {
+            font-family: var(--font-sans);
             font-size: 1.45rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
         }
 
-        .precio-antes {
-            font-size: 0.85rem;
-            color: #94a3b8;
+        .regular-price-tag {
+            font-size: 0.86rem;
+            color: var(--text-muted);
             text-decoration: line-through;
-            font-weight: 500;
         }
 
-        /* Card Button Group */
-        .card-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 0.3rem;
+        /* Botones de Acción de Tarjeta */
+        .card-action-buttons {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
         }
 
-        .btn-add-cart {
-            width: 100%;
-            background: var(--dark);
+        .btn-card-add-cart {
+            background: var(--accent);
             color: white;
             border: none;
-            padding: 0.75rem;
+            padding: 0.75rem 1rem;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+        }
+
+        .btn-card-add-cart:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-card-wa-direct {
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
         }
 
-        .btn-add-cart:hover {
-            background: #1e293b;
-            transform: translateY(-1px);
+        .btn-card-wa-direct:hover {
+            background: #128C7E;
+            transform: scale(1.08);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
         }
 
-        .btn-wa-direct {
-            width: 100%;
-            background: #f0fdf4;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-            padding: 0.65rem;
+        /* ==========================================================================
+           7. SECCIÓN "COMPRA CON CONFIANZA" (BENEFICIOS)
+           ========================================================================== */
+        .benefits-section {
+            max-width: 1380px;
+            margin: 4.5rem auto 3rem;
+            padding: 0 1.5rem;
+        }
+
+        .benefits-card-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            padding: 3.5rem 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .benefit-icon-wrapper {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .benefit-title {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.25;
+        }
+
+        .benefit-desc {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           8. FOOTER ELEGANTE (CIRUELA PROFUNDO #3D1E38)
+           ========================================================================== */
+        .footer-luxury {
+            background-color: var(--primary);
+            color: #FAF6F2;
+            margin-top: 5rem;
+            padding: 4.5rem 1.5rem 2rem;
+            border-top: 2px solid rgba(200, 138, 120, 0.25);
+        }
+
+        .footer-container {
+            max-width: 1380px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(250, 246, 242, 0.12);
+        }
+
+        .footer-brand-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .footer-brand-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FAF6F2;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-brand-title span {
+            color: var(--accent);
+        }
+
+        .footer-brand-desc {
+            font-size: 0.92rem;
+            color: #D3C5D1;
+            line-height: 1.65;
+            max-width: 340px;
+        }
+
+        .footer-column-heading {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #FAF6F2;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links-list a {
+            font-size: 0.88rem;
+            color: #C0B1BF;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links-list a:hover {
+            color: var(--accent);
+            padding-left: 4px;
+        }
+
+        .footer-contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            font-size: 0.9rem;
+            color: #D3C5D1;
+        }
+
+        .footer-wa-badge {
+            background: rgba(200, 138, 120, 0.15);
+            border: 1px solid var(--accent);
+            color: #FAF6F2;
+            padding: 0.65rem 1.1rem;
             border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: fit-content;
+            margin-top: 0.4rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-wa-badge:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .payment-methods-grid {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
+        }
+
+        .payment-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #FAF6F2;
+        }
+
+        .footer-bottom-bar {
+            max-width: 1380px;
+            margin: 2rem auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             font-size: 0.8rem;
-            font-weight: 700;
+            color: #A797A6;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-admin-btn {
+            background: transparent;
+            border: none;
+            color: #8C7B8A;
+            font-size: 0.76rem;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-            text-decoration: none;
-            transition: all 0.2s;
+            text-decoration: underline;
+            transition: var(--transition-smooth);
         }
 
-        .btn-wa-direct:hover {
-            background: #dcfce7;
-            border-color: #86efac;
+        .footer-admin-btn:hover {
+            color: var(--accent);
         }
 
-        /* Floating Cart Drawer */
-        .cart-overlay {
+        /* ==========================================================================
+           9. SHOPPING CART DRAWER (BOLSA DE PEDIDO POR WHATSAPP)
+           ========================================================================== */
+        .cart-backdrop-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(61, 30, 56, 0.45);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .cart-backdrop-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sliding-drawer {
             position: fixed;
             top: 0;
-            left: 0;
+            right: 0;
             width: 100%;
+            max-width: 460px;
             height: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 999;
+            background: #FFFFFF;
+            z-index: 201;
+            box-shadow: -10px 0 35px rgba(61, 30, 56, 0.18);
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sliding-drawer.open {
+            transform: translateX(0);
+        }
+
+        .cart-drawer-header {
+            padding: 1.4rem 1.6rem;
+            background: var(--bg-main);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-drawer-title {
+            font-family: var(--font-serif);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-close-drawer {
+            background: transparent;
+            border: none;
+            font-size: 1.7rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            line-height: 1;
+            padding: 0.2rem 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-close-drawer:hover {
+            color: var(--primary);
+            background: var(--bg-secondary);
+        }
+
+        .cart-items-scrollable {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.4rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        /* Item en Carrito */
+        .cart-item-row {
+            display: grid;
+            grid-template-columns: 74px 1fr auto;
+            gap: 1rem;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-item-thumbnail {
+            width: 74px;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+        }
+
+        .cart-item-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .cart-item-name {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.25;
+        }
+
+        .cart-item-size-badge {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .cart-item-price-unit {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cart-item-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .cart-item-qty-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            overflow: hidden;
+            background: var(--bg-main);
+        }
+
+        .btn-qty-step {
+            background: transparent;
+            border: none;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .btn-qty-step:hover {
+            background: var(--border-color);
+        }
+
+        .qty-val-display {
+            font-size: 0.8rem;
+            font-weight: 700;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .btn-trash-item {
+            background: transparent;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-trash-item:hover {
+            color: #e11d48;
+        }
+
+        /* Empty State */
+        .cart-empty-message {
+            text-align: center;
+            padding: 4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-empty-icon {
+            font-size: 3.5rem;
+            color: var(--accent);
+        }
+
+        /* Footer del Carrito */
+        .cart-drawer-footer {
+            padding: 1.4rem 1.6rem;
+            background: var(--bg-main);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .checkout-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .cart-input {
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.86rem;
+            outline: none;
+            color: var(--text-primary);
+        }
+
+        .cart-input:focus {
+            border-color: var(--accent);
+        }
+
+        .cart-price-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding-top: 0.4rem;
+        }
+
+        .cart-summary-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .cart-summary-total {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.6rem;
+        }
+
+        .btn-confirm-wa-order {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-confirm-wa-order:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+        }
+
+        /* ==========================================================================
+           10. MODAL: TABLA DE MEDIDAS EN CM (GUÍA DE TALLAS CURVY)
+           ========================================================================== */
+        .modal-overlay-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(61, 30, 56, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
         }
 
-        .cart-overlay.open {
+        .modal-overlay-backdrop.open {
             opacity: 1;
             visibility: visible;
         }
 
-        .cart-drawer {
-            position: fixed;
-            top: 0;
-            right: -100%;
+        .modal-dialog-box {
+            background: #FFFFFF;
+            border-radius: 1.8rem;
+            max-width: 650px;
             width: 100%;
-            max-width: 440px;
-            height: 100%;
-            background: white;
-            z-index: 1000;
-            box-shadow: -10px 0 35px rgba(0,0,0,0.25);
-            display: flex;
-            flex-direction: column;
-            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .cart-drawer.open {
-            right: 0;
-        }
-
-        .cart-header {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #fff5f6;
-        }
-
-        .cart-header h3 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-close-cart {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--slate);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.2rem;
-            border-radius: 50%;
-            transition: color 0.2s;
-        }
-
-        .btn-close-cart:hover {
-            color: var(--primary);
-        }
-
-        .cart-items-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-
-        .cart-empty-state {
-            text-align: center;
-            padding: 3rem 1.5rem;
-            color: var(--slate);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .cart-empty-icon {
-            font-size: 3.5rem;
-            opacity: 0.7;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 0.9rem;
-            background: #faf7f8;
-            padding: 0.9rem;
-            border-radius: 1rem;
-            border: 1px solid #fce7f3;
-            align-items: center;
-        }
-
-        .cart-item-img {
-            width: 65px;
-            height: 65px;
-            object-fit: contain;
-            background: white;
-            border-radius: 0.75rem;
-            padding: 0.3rem;
-            border: 1px solid #f1f5f9;
-            flex-shrink: 0;
-        }
-
-        .cart-item-details {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .cart-item-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--dark);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .cart-item-size {
-            font-size: 0.72rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin-top: 0.15rem;
-        }
-
-        .cart-item-price {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-top: 0.3rem;
-        }
-
-        .cart-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 0.2rem 0.5rem;
-        }
-
-        .qty-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            color: var(--dark);
-            width: 20px;
-            text-align: center;
-        }
-
-        .qty-number {
-            font-size: 0.85rem;
-            font-weight: 700;
-            min-width: 16px;
-            text-align: center;
-        }
-
-        .btn-remove-item {
-            background: none;
-            border: none;
-            color: #94a3b8;
-            cursor: pointer;
-            font-size: 1rem;
-            padding: 0.3rem;
-            transition: color 0.15s;
-        }
-
-        .btn-remove-item:hover {
-            color: var(--primary);
-        }
-
-        .cart-footer {
-            padding: 1.25rem 1.5rem;
-            border-top: 1px solid #f1f5f9;
-            background: #fff;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-
-        .customer-inputs {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .customer-inputs input {
-            width: 100%;
-            padding: 0.65rem 0.9rem;
-            border-radius: 12px;
-            border: 1px solid #cbd5e1;
-            font-family: inherit;
-            font-size: 0.82rem;
-            outline: none;
-        }
-
-        .customer-inputs input:focus {
-            border-color: var(--primary);
-        }
-
-        .cart-summary-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--slate);
-        }
-
-        .cart-total-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--dark);
-            border-top: 1px dashed #e2e8f0;
-            padding-top: 0.6rem;
-        }
-
-        .cart-total-row span:last-child {
-            color: var(--primary);
-            font-size: 1.4rem;
-        }
-
-        .btn-send-wa {
-            background: var(--whatsapp);
-            color: white;
-            border: none;
-            padding: 0.9rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.2s;
-            text-decoration: none;
-        }
-
-        .btn-send-wa:hover {
-            background: #20bd5a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        /* Fixed WhatsApp Floating CTA */
-        .floating-wa-btn {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 80;
-            background: var(--whatsapp);
-            color: white;
-            padding: 0.85rem 1.4rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-weight: 700;
-            font-size: 0.88rem;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-            transition: all 0.25s;
-        }
-
-        .floating-wa-btn:hover {
-            transform: scale(1.05);
-            background: #20bd5a;
-        }
-
-        /* Footer */
-        footer {
-            max-width: 1300px;
-            margin: 4rem auto 0;
-            padding: 2rem 1.25rem 1rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--slate);
-            font-size: 0.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            align-items: center;
-        }
-
-        .footer-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .footer-contact {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .admin-link {
-            font-size: 0.7rem;
-            color: #94a3b8;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 0.5rem;
-        }
-
-        .admin-link:hover {
-            color: var(--primary);
-        }
-
-        /* Admin Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1100;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            width: 90%;
-            max-width: 520px;
+            padding: 2.2rem 2.4rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-hover);
+            position: relative;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
         }
 
-        .modal-content h3 {
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .modal-content label {
-            font-weight: 600;
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 0.8rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .modal-content input {
-            width: 100%;
-            padding: 0.6rem;
-            border-radius: 12px;
-            border: 1px solid #cbd5e1;
-        }
-
-        .modal-buttons {
+        .modal-header-row {
             display: flex;
-            gap: 0.5rem;
-            justify-content: flex-end;
-            margin-top: 1.2rem;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.8rem;
         }
 
-        .btn-modal {
-            background: var(--dark);
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
+        .modal-title-serif {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
         }
 
-        .btn-modal-cancel {
+        .btn-close-modal {
             background: transparent;
-            border: 1px solid #cbd5e1;
-            color: var(--slate);
+            border: none;
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            line-height: 1;
         }
 
-        /* Notification Toast */
-        .toast {
+        /* Tabla estilizada */
+        .size-chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.88rem;
+        }
+
+        .size-chart-table th {
+            background: var(--bg-secondary);
+            color: var(--primary);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .size-chart-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .size-chart-table tr:hover td {
+            background: var(--bg-main);
+        }
+
+        .size-advice-box {
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.25rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+           11. MODAL DE ADMINISTRACIÓN RÁPIDA (BACKOFFICE)
+           ========================================================================== */
+        .admin-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin: 1.2rem 0;
+        }
+
+        .admin-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Toast de Notificaciones */
+        .luxury-toast {
             position: fixed;
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: var(--dark);
-            color: white;
-            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: #FAF6F2;
+            padding: 0.85rem 1.8rem;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-            z-index: 2000;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(61, 30, 56, 0.35);
+            border: 1px solid var(--accent);
+            z-index: 500;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             opacity: 0;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: var(--transition-smooth);
             pointer-events: none;
         }
 
-        .toast.show {
+        .luxury-toast.show {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
         }
 
-        @media (max-width: 640px) {
-            .hero-card { padding: 1.5rem 1.2rem; }
-            .productos-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
-            .img-area { min-height: 170px; padding: 0.6rem; }
-            .producto-img { max-height: 160px; }
-            .card-info { padding: 0.85rem; }
-            .producto-nombre { font-size: 0.82rem; min-height: 2.4rem; }
-            .precio-actual { font-size: 1.15rem; }
-            .precio-antes { font-size: 0.72rem; }
-            .size-btn { padding: 0.15rem 0.45rem; font-size: 0.68rem; }
-            .btn-add-cart { padding: 0.6rem; font-size: 0.76rem; }
-            .btn-wa-direct { display: none; }
-            .floating-wa-btn span { display: none; }
-            .floating-wa-btn { padding: 0.85rem; border-radius: 50%; }
+        /* Floating WhatsApp Button */
+        .floating-wa-bubble {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            background: #25D366;
+            color: white;
+            padding: 0.85rem 1.4rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            font-size: 0.86rem;
+            font-weight: 700;
+            z-index: 85;
+            transition: var(--transition-smooth);
+        }
+
+        .floating-wa-bubble:hover {
+            background: #128C7E;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ==========================================================================
+           12. RESPONSIVE DESIGN (OPTIMIZADO PARA SMARTPHONES)
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                padding: 2.5rem 2rem;
+                gap: 2.5rem;
+            }
+            .hero-visual {
+                order: -1;
+            }
+            .editorial-arch-frame {
+                max-width: 280px;
+            }
+            .benefits-card-container {
+                grid-template-columns: 1fr;
+                padding: 2.2rem 1.8rem;
+                gap: 2rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-announcement {
+                font-size: 0.74rem;
+                padding: 0.45rem 0.8rem;
+            }
+            .nav-links {
+                display: none; /* Ocultar enlaces de texto en móviles para mantenerlo limpio */
+            }
+            .brand-name {
+                font-size: 1.55rem;
+            }
+            .brand-logo-img {
+                height: 40px;
+            }
+            .filter-top-bar {
+                grid-template-columns: 1fr;
+            }
+            .products-grid-editorial {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem 0.85rem;
+            }
+            .product-editorial-card {
+                border-radius: 1rem;
+            }
+            .product-info-block {
+                padding: 0.9rem 0.75rem 0.75rem;
+                gap: 0.6rem;
+            }
+            .product-item-title {
+                font-size: 1rem;
+                min-height: 2.4rem;
+            }
+            .current-price-tag {
+                font-size: 1.2rem;
+            }
+            .regular-price-tag {
+                font-size: 0.74rem;
+            }
+            .card-action-buttons {
+                grid-template-columns: 1fr;
+            }
+            .btn-card-wa-direct {
+                display: none;
+            }
+            .btn-card-add-cart {
+                padding: 0.65rem 0.6rem;
+                font-size: 0.76rem;
+            }
+            .floating-wa-bubble span {
+                display: none;
+            }
+            .floating-wa-bubble {
+                padding: 0.85rem;
+                border-radius: 50%;
+                bottom: 1.2rem;
+                right: 1.2rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            .modal-dialog-box {
+                padding: 1.6rem 1.4rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .products-grid-editorial {
+                grid-template-columns: 1fr;
+            }
+            .product-media-wrapper {
+                aspect-ratio: 4 / 5;
+            }
+            .hero-headline {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Barra de Anuncio Superior -->
-    <div class="top-bar">
-        <span>✨ Envíos a todo el Perú (Lima y Provincias)</span> • <span>📦 Asesoría personalizada por WhatsApp</span>
-    </div>
+    <!-- 1. TOP ANNOUNCEMENT BAR -->
+    <aside class="top-announcement" aria-label="Anuncio">
+        <span><strong class="accent-star">✨</strong> Envíos a todo el Perú | Nueva Colección Disponible</span>
+        <span>•</span>
+        <span>📦 Asesoría de Tallas Curvy por WhatsApp</span>
+    </aside>
 
-    <!-- Header Principal -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo-area">
-                <div class="logo-title">Universo<span>Plus</span></div>
-                <div class="logo-tagline">Moda Curvy & Plus Size Exclusiva</div>
+    <!-- 2. NAVBAR STICKY GLASSMORPHISM -->
+    <header class="navbar-sticky">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-logo-link">
+                <img src="logo.png" alt="UniversoPlus Logo" class="brand-logo-img" onerror="this.style.display='none'">
+                <div class="brand-text-block">
+                    <div class="brand-name">UniversoPlus<span class="brand-star">✦</span></div>
+                    <div class="brand-tagline">Boutique Curvy & Plus Size</div>
+                </div>
             </a>
-            <div class="header-actions">
-                <button class="cart-trigger-btn" id="openCartBtn">
-                    <span>🛍️ Mi Pedido</span>
-                    <span class="cart-count-badge" id="cartCountBadge">0</span>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links">
+                    <li class="nav-link-item"><a href="#catalogo">Inicio</a></li>
+                    <li class="nav-link-item"><a href="#catalogo" onclick="setQuickCategory('Conjuntos')">Conjuntos</a></li>
+                    <li class="nav-link-item"><a href="#catalogo" onclick="setQuickCategory('Vestidos')">Vestidos</a></li>
+                    <li class="nav-link-item"><a href="#catalogo" onclick="setQuickCategory('Lencería')">Lencería</a></li>
+                    <li class="nav-link-item"><a href="#catalogo" onclick="setQuickCategory('Pijamas')">Pijamas</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions: Size Guide & Cart Trigger -->
+            <div class="nav-actions">
+                <button class="btn-size-guide-nav" id="btnOpenSizeGuideNav">
+                    <span>📏</span> Guía de Tallas
+                </button>
+                <button class="btn-cart-nav" id="btnOpenCart">
+                    <span>🛍️</span>
+                    <span>Mi Pedido</span>
+                    <span class="cart-badge-count" id="cartCountBadge">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Banner Hero -->
-    <section class="hero-banner">
-        <div class="hero-card">
-            <div class="hero-badge">Colección Plus Size 2026</div>
-            <h1 class="hero-title">Realza tu belleza con prendas hechas a tu medida</h1>
-            <p class="hero-desc">Explora nuestra colección curvy seleccionada: conjuntos, lencería de lujo, pijamas y vestidos. Elige tus tallas, arma tu pedido y recíbelo por WhatsApp.</p>
+    <!-- 3. HERO SECTION EDITORIAL -->
+    <section class="hero-editorial">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-pill-badge">
+                    <span>✦</span> Moda Curvy & Plus Size Exclusiva
+                </div>
+                <h1 class="hero-headline">
+                    Diseñado para <em>abrazar</em> y destacar tus curvas
+                </h1>
+                <p class="hero-description">
+                    Prendas seleccionadas con calce real desde la talla XL hasta la 4XL. Tejidos nobles con spandex, cortes favorecedores y acabados de alta gama para que sientas seguridad y sofisticación en cada momento.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#catalogo" class="btn-hero-primary">
+                        <span>Ver Colección</span>
+                        <span>↓</span>
+                    </a>
+                    <button class="btn-hero-secondary" id="btnHeroSizeGuide">
+                        <span>📏 Asesoría de Tallas</span>
+                    </button>
+                </div>
+                <div class="hero-trust-bullets">
+                    <span>✨ Calce Real Garantizado</span>
+                    <span>•</span>
+                    <span>🚚 Envíos Lima y Provincias</span>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Foto Editorial en Arco -->
+            <div class="hero-visual">
+                <div class="editorial-arch-frame">
+                    <img src="https://img.ltwebstatic.com/images3_pi/2024/06/21/85/1718936508fd6d27b55ffb26f68f1701c461c53fdd_thumbnail_720x960.webp" alt="Modelo Curvy UniversoPlus" loading="eager">
+                </div>
+                <div class="floating-editorial-card">
+                    <div class="floating-card-icon">✦</div>
+                    <div>
+                        <div class="floating-card-title">Tallas XL a 4XL</div>
+                        <div class="floating-card-sub">Medidas adaptadas a tu cuerpo</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Controles de Búsqueda y Filtros de Categoría -->
-    <div class="controls-wrapper">
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" placeholder="Buscar por prenda, conjunto, lencería...">
-        </div>
-        <div class="category-pills" id="categoryPills">
-            <!-- Renderizado dinámico -->
-        </div>
-    </div>
+    <!-- 4. FILTROS INTELIGENTES Y SELECTOR DE TALLAS RÁPIDO -->
+    <section class="filters-section" id="catalogo">
+        <div class="filters-wrapper">
+            <!-- Barra superior: Búsqueda y Tabla de Medidas -->
+            <div class="filter-top-bar">
+                <div class="search-container">
+                    <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input-field" placeholder="Buscar por prenda, conjunto, vestido, lencería...">
+                </div>
+                <button class="btn-open-size-table" id="btnOpenTableModal">
+                    <span>📏</span> Tabla de Medidas en cm
+                </button>
+            </div>
 
-    <!-- Contenedor Principal de Productos -->
-    <main class="container">
-        <div class="productos-grid" id="productosGrid">
-            <!-- Renderizado dinámico -->
+            <!-- Filtros de Categoría -->
+            <div class="category-filter-group">
+                <div class="filter-label-title">Categorías</div>
+                <div class="pills-scroll-row" id="categoryPillsRow">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+
+            <!-- Filtro Rápido por Talla -->
+            <div class="category-filter-group">
+                <div class="filter-label-title">Filtrar por Talla</div>
+                <div class="size-filter-row" id="sizeFiltersRow">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. GRILLA DE PRODUCTOS -->
+    <main class="catalog-container">
+        <div class="catalog-header-meta">
+            <h2 class="catalog-heading-title" id="catalogSectionTitle">Prendas Disponibles</h2>
+            <div class="catalog-count-label" id="catalogCountLabel">Cargando colección...</div>
+        </div>
+
+        <div class="products-grid-editorial" id="productsGridContainer">
+            <!-- Renderizado Dinámico de Tarjetas -->
         </div>
     </main>
 
-    <!-- Carrito Lateral (Drawer) -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
-            <h3>🛍️ Tu Pedido UniversoPlus</h3>
-            <button class="btn-close-cart" id="closeCartBtn">&times;</button>
+    <!-- 6. SECCIÓN "COMPRA CON CONFIANZA" (BENEFICIOS) -->
+    <section class="benefits-section">
+        <div class="benefits-card-container">
+            <div class="benefit-item">
+                <div class="benefit-icon-wrapper">
+                    <span>📐</span>
+                </div>
+                <h3 class="benefit-title">Calce Real Garantizado</h3>
+                <p class="benefit-desc">
+                    Nuestras prendas están confeccionadas específicamente para siluetas curvy y plus size. Medidas generosas en busto, cadera y brazos que estilizan sin ajustar.
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon-wrapper">
+                    <span>✨</span>
+                </div>
+                <h3 class="benefit-title">Telas Premium & Caída Noble</h3>
+                <p class="benefit-desc">
+                    Tejidos seleccionados con mezclas de spandex, tul bordado y satén sedoso de alto gramaje que no traslucen y brindan total confort durante todo el día.
+                </p>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon-wrapper">
+                    <span>💬</span>
+                </div>
+                <h3 class="benefit-title">Atención Personalizada por WhatsApp</h3>
+                <p class="benefit-desc">
+                    ¿Dudas con tu talla o medida en centímetros? Te atendemos de inmediato para orientarte en cada detalle antes de realizar tu envío a cualquier parte del Perú.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER ELEGANTE -->
+    <footer class="footer-luxury">
+        <div class="footer-container">
+            <div class="footer-brand-column">
+                <div class="footer-brand-title">Universo<span>Plus</span>✦</div>
+                <p class="footer-brand-desc">
+                    Boutique exclusiva de moda femenina curvy. Creemos en la belleza auténtica, la sensualidad y la elegancia sin límites de tallas.
+                </p>
+                <div class="footer-wa-badge">
+                    <span>📲 Pedidos:</span>
+                    <strong>+51 944 524 476</strong>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-column-heading">Colecciones</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#catalogo" onclick="setQuickCategory('Conjuntos')">Conjuntos Elegantes</a></li>
+                    <li><a href="#catalogo" onclick="setQuickCategory('Vestidos')">Vestidos & Monos</a></li>
+                    <li><a href="#catalogo" onclick="setQuickCategory('Lencería')">Lencería Sensual</a></li>
+                    <li><a href="#catalogo" onclick="setQuickCategory('Pijamas')">Pijamas de Satén</a></li>
+                    <li><a href="#catalogo" onclick="setQuickCategory('Deportivo')">Moda Deportiva</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-column-heading">Atención al Cliente</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#" id="footerSizeGuideLink">Tabla de Medidas en cm</a></li>
+                    <li><a href="https://wa.me/51944524476?text=Hola%20UniversoPlus%2C%20deseo%20consultar%20sobre%20los%20env%C3%ADos." target="_blank">Envíos a Nivel Nacional</a></li>
+                    <li><a href="https://wa.me/51944524476?text=Hola%20UniversoPlus%2C%20deseo%20asesor%C3%ADa%20personalizada%20de%20tallas." target="_blank">Asesoría de Estilo</a></li>
+                    <li><a href="index-v1-backup.html" target="_blank" title="Ver versión de estilo anterior guardada">Ver Estilo Anterior</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-column-heading">Medios de Pago</h4>
+                <div class="footer-contact-box">
+                    <p>Aceptamos pagos directos y seguros para agilizar tu pedido:</p>
+                    <div class="payment-methods-grid">
+                        <span class="payment-badge">🟣 Yape</span>
+                        <span class="payment-badge">🔵 Plin</span>
+                        <span class="payment-badge">🏦 BCP / BBVA</span>
+                        <span class="payment-badge">💳 Tarjetas</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="cart-items-container" id="cartItemsContainer">
-            <!-- Elementos del carrito -->
+        <div class="footer-bottom-bar">
+            <div>© 2026 UniversoPlus. Todos los derechos reservados. Diseñado para abrazar tus curvas.</div>
+            <div>
+                <button class="footer-admin-btn" id="btnOpenAdminPanel">⚙️ Configuración del Catálogo</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 8. CART DRAWER (SLIDING SIDEBAR) -->
+    <div class="cart-backdrop-overlay" id="cartOverlay"></div>
+    <aside class="cart-sliding-drawer" id="cartDrawer" aria-label="Bolsa de Pedidos">
+        <div class="cart-drawer-header">
+            <div class="cart-drawer-title">
+                <span>🛍️</span> Mi Pedido UniversoPlus
+            </div>
+            <button class="btn-close-drawer" id="btnCloseCart">&times;</button>
         </div>
 
-        <div class="cart-footer" id="cartFooter">
-            <div class="customer-inputs">
-                <input type="text" id="customerName" placeholder="Tu Nombre completo (Obligatorio)">
-                <input type="text" id="customerCity" placeholder="Ciudad / Distrito de entrega (Ej: Lima, Arequipa...)">
+        <div class="cart-items-scrollable" id="cartItemsList">
+            <!-- Items Dinámicos -->
+        </div>
+
+        <div class="cart-drawer-footer" id="cartDrawerFooter">
+            <div class="checkout-input-group">
+                <input type="text" id="custNameInput" class="cart-input" placeholder="Tu Nombre y Apellidos (Obligatorio)">
+                <input type="text" id="custCityInput" class="cart-input" placeholder="Ciudad / Distrito de Entrega (Ej: Lima, Arequipa)">
             </div>
 
-            <div class="cart-summary-row">
-                <span>Prendas seleccionadas:</span>
-                <span id="cartTotalItems">0 prendas</span>
+            <div class="cart-price-summary">
+                <div class="cart-summary-line">
+                    <span>Prendas en total:</span>
+                    <strong id="cartSummaryItemCount">0 prendas</strong>
+                </div>
+                <div class="cart-summary-total">
+                    <span>Total a pagar:</span>
+                    <span id="cartSummaryTotalPrice">S/ 0.00</span>
+                </div>
             </div>
 
-            <div class="cart-total-row">
-                <span>Total a pagar:</span>
-                <span id="cartTotalPrice">S/ 0.00</span>
-            </div>
-
-            <button class="btn-send-wa" id="btnSendWhatsApp">
+            <button class="btn-confirm-wa-order" id="btnSubmitWhatsAppCart">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.176.2-.351.226-.652.075-.3-.151-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.3-.502.1-.2.05-.376-.025-.527-.075-.15-.676-1.631-.927-2.232-.244-.585-.492-.506-.676-.515-.175-.009-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.48 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.23 1.377.197 1.895.12.578-.087 1.78-.727 2.031-1.43.251-.703.251-1.305.176-1.43-.075-.126-.276-.201-.577-.351zM12.042 21.84a9.78 9.78 0 0 1-4.99-1.37l-.358-.213-3.71.973.99-3.616-.233-.371a9.788 9.788 0 0 1-1.5-5.203c0-5.419 4.41-9.829 9.83-9.829 2.625 0 5.093 1.023 6.949 2.879a9.78 9.78 0 0 1 2.876 6.946c0 5.42-4.41 9.833-9.854 9.833zm0-17.84c-4.43 0-8.033 3.604-8.033 8.033 0 1.416.368 2.8 1.067 4.024l.164.288-.636 2.327 2.383-.625.279.165a8.006 8.006 0 0 0 4.776 1.448c4.43 0 8.033-3.604 8.033-8.033 0-2.146-.836-4.164-2.353-5.681A7.99 7.99 0 0 0 12.042 4z"/>
                 </svg>
-                Enviar Pedido por WhatsApp
+                <span>Enviar Pedido por WhatsApp</span>
             </button>
+        </div>
+    </aside>
+
+    <!-- 9. MODAL: TABLA DE MEDIDAS EN CM (GUÍA DE TALLAS) -->
+    <div class="modal-overlay-backdrop" id="sizeGuideModal">
+        <div class="modal-dialog-box">
+            <div class="modal-header-row">
+                <div class="modal-title-serif">📏 Guía de Medidas UniversoPlus</div>
+                <button class="btn-close-modal" id="btnCloseSizeModal">&times;</button>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">
+                Nuestras prendas están confeccionadas para ajustarse armoniosamente a las curvas latinas. Mídete con una cinta métrica flexible sin apretar:
+            </p>
+
+            <table class="size-chart-table">
+                <thead>
+                    <tr>
+                        <th>Talla</th>
+                        <th>Busto (cm)</th>
+                        <th>Cintura (cm)</th>
+                        <th>Cadera (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>XL (42 - 44)</strong></td>
+                        <td>102 - 108 cm</td>
+                        <td>86 - 92 cm</td>
+                        <td>110 - 116 cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2XL / XXL (46 - 48)</strong></td>
+                        <td>109 - 116 cm</td>
+                        <td>93 - 102 cm</td>
+                        <td>117 - 126 cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3XL / 3X (50 - 52)</strong></td>
+                        <td>117 - 126 cm</td>
+                        <td>103 - 112 cm</td>
+                        <td>127 - 136 cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4XL / 4X (54 - 56)</strong></td>
+                        <td>127 - 138 cm</td>
+                        <td>113 - 124 cm</td>
+                        <td>137 - 148 cm</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="size-advice-box">
+                💡 <strong>Consejo de Estilo:</strong> Si tus medidas se encuentran entre dos tallas, te recomendamos elegir la talla mayor si prefieres un calce más suelto y fluido, o consultar directamente por WhatsApp a nuestras asesoras con tus medidas exactas.
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="https://wa.me/51944524476?text=Hola%20UniversoPlus%2C%20tengo%20dudas%20con%20mis%20medidas%20para%20elegir%20la%20talla%20correcta." target="_blank" class="btn-hero-primary" style="font-size: 0.85rem; padding: 0.75rem 1.6rem;">
+                    💬 Consultar con una Asesora por WhatsApp
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Botón Flotante Directo de WhatsApp -->
-    <a href="https://wa.me/51944524476?text=Hola%20UniversoPlus%2C%20deseo%20consultar%20sobre%20el%20cat%C3%A1logo%20curvy%20y%20tallas%20disponibles." target="_blank" class="floating-wa-btn">
+    <!-- 10. MODAL: PANEL DE CONFIGURACIÓN RÁPIDA -->
+    <div class="modal-overlay-backdrop" id="adminConfigModal">
+        <div class="modal-dialog-box" style="max-width: 500px;">
+            <div class="modal-header-row">
+                <div class="modal-title-serif">⚙️ Panel de Catálogo</div>
+                <button class="btn-close-modal" id="btnCloseAdminModal">&times;</button>
+            </div>
+            <div class="admin-form-group">
+                <label class="admin-label">Tipo de Cambio (USD → S/.)</label>
+                <input type="number" id="cfgTC" class="cart-input" step="0.01">
+
+                <label class="admin-label">Margen de Ganancia (%)</label>
+                <input type="number" id="cfgMargen" class="cart-input" step="1">
+
+                <label class="admin-label">Descuento Mostrado en Etiqueta (%)</label>
+                <input type="number" id="cfgDescuento" class="cart-input" step="1">
+
+                <label class="admin-label">Número WhatsApp Receptor</label>
+                <input type="text" id="cfgWhatsApp" class="cart-input" placeholder="51944524476">
+            </div>
+
+            <div style="display: flex; gap: 0.8rem; justify-content: flex-end; margin-top: 1.2rem;">
+                <button class="btn-size-guide-nav" id="btnCancelAdmin">Cancelar</button>
+                <button class="btn-hero-primary" id="btnSaveAdmin" style="padding: 0.7rem 1.4rem;">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. TOAST NOTIFICATION -->
+    <div class="luxury-toast" id="luxuryToast">✨ Prenda agregada a tu pedido</div>
+
+    <!-- 12. FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/51944524476?text=Hola%20UniversoPlus%2C%20deseo%20consultar%20sobre%20el%20cat%C3%A1logo%20de%20moda%20curvy%20y%20tallas%20disponibles." target="_blank" class="floating-wa-bubble" aria-label="Contactar por WhatsApp">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.176.2-.351.226-.652.075-.3-.151-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.3-.502.1-.2.05-.376-.025-.527-.075-.15-.676-1.631-.927-2.232-.244-.585-.492-.506-.676-.515-.175-.009-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.48 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.23 1.377.197 1.895.12.578-.087 1.78-.727 2.031-1.43.251-.703.251-1.305.176-1.43-.075-.126-.276-.201-.577-.351zM12.042 21.84a9.78 9.78 0 0 1-4.99-1.37l-.358-.213-3.71.973.99-3.616-.233-.371a9.788 9.788 0 0 1-1.5-5.203c0-5.419 4.41-9.829 9.83-9.829 2.625 0 5.093 1.023 6.949 2.879a9.78 9.78 0 0 1 2.876 6.946c0 5.42-4.41 9.833-9.854 9.833zm0-17.84c-4.43 0-8.033 3.604-8.033 8.033 0 1.416.368 2.8 1.067 4.024l.164.288-.636 2.327 2.383-.625.279.165a8.006 8.006 0 0 0 4.776 1.448c4.43 0 8.033-3.604 8.033-8.033 0-2.146-.836-4.164-2.353-5.681A7.99 7.99 0 0 0 12.042 4z"/>
         </svg>
         <span>Chatear por WhatsApp</span>
     </a>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toastMessage">✨ Prenda agregada al carrito</div>
-
-    <!-- Modal de Edición de Administrador -->
-    <div id="adminModal" class="modal">
-        <div class="modal-content">
-            <h3>⚙️ Panel UniversoPlus (Edición Rápida)</h3>
-            <label>Tipo de Cambio USD → S/.</label>
-            <input type="number" id="admTC" step="0.01">
-            <label>Margen Ganancia Global (%)</label>
-            <input type="number" id="admMargen" step="1">
-            <label>Descuento Oferta Mostrado (%)</label>
-            <input type="number" id="admDescuento" step="1">
-            <label>Número WhatsApp Receptor</label>
-            <input type="text" id="admWA" placeholder="51944524476">
-            <div class="modal-buttons">
-                <button class="btn-modal btn-modal-cancel" id="btnCancelAdmin">Cerrar</button>
-                <button class="btn-modal" id="btnSaveAdmin">Guardar Configuración</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-brand">UniversoPlus</div>
-        <p>Moda curvy y tallas grandes pensada para tu comodidad, elegancia y seguridad.</p>
-        <div class="footer-contact">
-            <span>📲 Atención y Pedidos:</span>
-            <span>+51 944 524 476</span>
-        </div>
-        <a class="admin-link" id="openAdminLink">⚙️ Configuración del Catálogo</a>
-    </footer>
-
+    <!-- ==========================================================================
+         13. JAVASCRIPT: LÓGICA DE TIENDA, FILTROS Y CARRITO WHATSAPP
+         ========================================================================== -->
     <script>
-        // CONFIGURACIÓN DE UNIVERSOPLUS
+        // CONFIGURACIÓN PRINCIPAL
         const DEFAULT_CONFIG = {
             tipoCambio: 3.80,
             margenDistribuidor: 20,
@@ -1111,20 +2152,128 @@
             try { config = { ...config, ...JSON.parse(savedConfig) }; } catch (e) {}
         }
 
-        // CATÁLOGO DE PRENDAS UNIVERSOPLUS
+        // CATÁLOGO DE PRODUCTOS UNIVERSOPLUS CON TALLAS Y COLORES EDITORIALES
         const DEFAULT_PRODUCTOS = [
-            { id: 1, nombre: "Conjunto dos piezas: top cropped de malla + falda con abertura alta", precioUSD: 12.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/06/21/85/1718936508fd6d27b55ffb26f68f1701c461c53fdd_thumbnail_220x293.webp", tallas: ["XL", "XXL", "3X"], categoria: "Conjuntos" },
-            { id: 2, nombre: "Parte superior de tirantes trenzada + pantalones cortos", precioUSD: 12.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/08/12/ef/1723439665d62f7196beede59c4d81dabe9b0fa947_thumbnail_220x293.webp", tallas: ["XL", "XXL"], categoria: "Conjuntos" },
-            { id: 3, nombre: "Máscara de conejo sexy para adultos (accesorio)", precioUSD: 4.50, imagen: "https://img.ltwebstatic.com/images3_spmp/2024/08/14/f9/1723567395e109792c7c1ad655fe290170fe9eb523_thumbnail_220x293.webp", tallas: ["Única"], categoria: "Accesorios" },
-            { id: 4, nombre: "Sujetador con bordado floral de malla con aro (talla grande)", precioUSD: 10.00, imagen: "https://img.ltwebstatic.com/images3_pi/2023/07/12/168915868429fda6f94af62c82e74985ecd56ca8f3_thumbnail_220x293.webp", tallas: ["XL", "XXL", "1X", "2X"], categoria: "Lencería" },
-            { id: 5, nombre: "Sujetador deportivo sin aros, transpirable talla grande", precioUSD: 8.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/10/27/7a/173000739733050e5fb1c45449b1c6c9cbf79f3a2a_thumbnail_220x293.webp", tallas: ["XL", "XXL", "3X"], categoria: "Deportivo" },
-            { id: 6, nombre: "Pijama Cami con shorts de encaje", precioUSD: 9.00, imagen: "https://img.ltwebstatic.com/images3_pi/2023/10/31/de/1698718122d7e94851857b9e5690fe3947d1540f86_thumbnail_220x293.webp", tallas: ["XL", "XXL"], categoria: "Pijamas" },
-            { id: 7, nombre: "Mono de tirantes con encaje en contraste satén", precioUSD: 8.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/08/29/92/1724922194c090e2fed3559ccbc195a1a11697ee5a_thumbnail_220x293.webp", tallas: ["XL", "XXL", "1X"], categoria: "Vestidos" },
-            { id: 8, nombre: "Conjunto de pijama con lazo y encaje", precioUSD: 9.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/01/30/21/17065787794891d89aa8ac61446cab79aaa7dd4a2d_thumbnail_220x293.webp", tallas: ["XL", "XXL"], categoria: "Pijamas" },
-            { id: 9, nombre: "Conjunto 5 piezas: falda tul corazón + medias", precioUSD: 12.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/10/04/cf/1728030901ac9a491d6d754b94c6cf2723832a94e4_thumbnail_220x293.webp", tallas: ["XL", "XXL"], categoria: "Conjuntos" },
-            { id: 10, nombre: "Mono de tirantes satén (variante curvy)", precioUSD: 7.28, imagen: "https://img.ltwebstatic.com/images3_pi/2024/11/08/30/17310343571b8f6aebda3071015ab8fda3ea1c80e1_thumbnail_220x293.webp", tallas: ["XL", "XXL"], categoria: "Vestidos" },
-            { id: 11, nombre: "Camisón de seda con encaje floral", precioUSD: 8.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/06/23/8d/1719154561b52b6938507fa64cd0262a7c83440ff5_thumbnail_220x293.webp", tallas: ["XL", "XXL", "3X"], categoria: "Lencería" },
-            { id: 12, nombre: "Top corto de malla + falda estampado anudado", precioUSD: 15.00, imagen: "https://img.ltwebstatic.com/images3_pi/2024/04/25/31/1714012467ae7ed9925c46a0761aed7fc410597558_thumbnail_220x293.webp", tallas: ["XL", "XXL"], categoria: "Conjuntos" }
+            { 
+                id: 1, 
+                nombre: "Conjunto dos piezas: top cropped de malla + falda con abertura alta", 
+                precioUSD: 12.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/06/21/85/1718936508fd6d27b55ffb26f68f1701c461c53fdd_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Conjuntos",
+                badge: "Nuevo",
+                colores: ["#1e1b18", "#5e192c", "#c88a78"]
+            },
+            { 
+                id: 2, 
+                nombre: "Parte superior de tirantes trenzada + pantalones cortos fluidos", 
+                precioUSD: 12.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/08/12/ef/1723439665d62f7196beede59c4d81dabe9b0fa947_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL", "4XL"], 
+                categoria: "Conjuntos",
+                badge: "Más Vendido",
+                colores: ["#3d1e38", "#d1b4a6"]
+            },
+            { 
+                id: 3, 
+                nombre: "Máscara veneciana floral de noche para veladas especiales", 
+                precioUSD: 4.50, 
+                imagen: "https://img.ltwebstatic.com/images3_spmp/2024/08/14/f9/1723567395e109792c7c1ad655fe290170fe9eb523_thumbnail_720x960.webp", 
+                tallas: ["Única"], 
+                categoria: "Accesorios",
+                badge: "Exclusivo",
+                colores: ["#111111"]
+            },
+            { 
+                id: 4, 
+                nombre: "Sujetador con bordado floral de malla y soporte anatómico", 
+                precioUSD: 10.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2023/07/12/168915868429fda6f94af62c82e74985ecd56ca8f3_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Lencería",
+                badge: "Elegancia",
+                colores: ["#2d1b2a", "#8c2a44"]
+            },
+            { 
+                id: 5, 
+                nombre: "Sujetador deportivo sin aros con soporte confort transpirable", 
+                precioUSD: 8.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/10/27/7a/173000739733050e5fb1c45449b1c6c9cbf79f3a2a_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL", "4XL"], 
+                categoria: "Deportivo",
+                badge: "Confort 24/7",
+                colores: ["#2c2c2c", "#705d6e"]
+            },
+            { 
+                id: 6, 
+                nombre: "Pijama Cami en satén suave con shorts de encaje delicado", 
+                precioUSD: 9.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2023/10/31/de/1698718122d7e94851857b9e5690fe3947d1540f86_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Pijamas",
+                badge: "Favorito",
+                colores: ["#47223b", "#e0cfc7"]
+            },
+            { 
+                id: 7, 
+                nombre: "Mono enterizo de tirantes con encaje y caída drapeada", 
+                precioUSD: 8.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/08/29/92/1724922194c090e2fed3559ccbc195a1a11697ee5a_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Vestidos",
+                badge: "Tendencia",
+                colores: ["#1c1c1c", "#5a223c"]
+            },
+            { 
+                id: 8, 
+                nombre: "Conjunto de pijama en modal acanalado con lazo sutil", 
+                precioUSD: 9.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/01/30/21/17065787794891d89aa8ac61446cab79aaa7dd4a2d_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Pijamas",
+                badge: "Ultra Suave",
+                colores: ["#3b2336", "#cbb3a9"]
+            },
+            { 
+                id: 9, 
+                nombre: "Conjunto seducción 5 piezas: falda tul corazón + medias ligueras", 
+                precioUSD: 12.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/10/04/cf/1728030901ac9a491d6d754b94c6cf2723832a94e4_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Conjuntos",
+                badge: "Edición Limitada",
+                colores: ["#0f0f0f", "#831f36"]
+            },
+            { 
+                id: 10, 
+                nombre: "Mono de tirantes satén premium (corte envolvente curvy)", 
+                precioUSD: 7.28, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/11/08/30/17310343571b8f6aebda3071015ab8fda3ea1c80e1_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Vestidos",
+                badge: "Últimas Unidades",
+                colores: ["#2d1b28", "#c88a78"]
+            },
+            { 
+                id: 11, 
+                nombre: "Camisón largo de seda con detalles florales transparentes", 
+                precioUSD: 8.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/06/23/8d/1719154561b52b6938507fa64cd0262a7c83440ff5_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL", "4XL"], 
+                categoria: "Lencería",
+                badge: "Sensual",
+                colores: ["#1f141d", "#d1a89c"]
+            },
+            { 
+                id: 12, 
+                nombre: "Top cropped estructurado de malla + falda envolvente drapeada", 
+                precioUSD: 15.00, 
+                imagen: "https://img.ltwebstatic.com/images3_pi/2024/04/25/31/1714012467ae7ed9925c46a0761aed7fc410597558_thumbnail_720x960.webp", 
+                tallas: ["XL", "2XL", "3XL"], 
+                categoria: "Conjuntos",
+                badge: "Nueva Temporada",
+                colores: ["#3d1e38", "#232323"]
+            }
         ];
 
         let productos = [...DEFAULT_PRODUCTOS];
@@ -1134,15 +2283,15 @@
                 const parsed = JSON.parse(savedProds);
                 productos = parsed.map(p => ({
                     ...p,
-                    tallas: Array.isArray(p.tallas) ? p.tallas : (p.tallas ? p.tallas.split(',').map(t => t.trim()) : ["XL", "XXL"])
+                    tallas: Array.isArray(p.tallas) ? p.tallas : (p.tallas ? p.tallas.split(',').map(t => t.trim()) : ["XL", "2XL", "3XL"])
                 }));
             } catch (e) {}
         }
 
-        // SELECCIÓN DE TALLA EN CADA CARD
+        // TALLA SELECCIONADA POR PRENDA
         const selectedSizes = {};
         productos.forEach(p => {
-            selectedSizes[p.id] = p.tallas[0] || 'Estándar';
+            selectedSizes[p.id] = p.tallas[0] || 'XL';
         });
 
         // ESTADO DEL CARRITO DE COMPRAS
@@ -1157,7 +2306,7 @@
             updateCartUI();
         }
 
-        // FÓRMULA DE PRECIOS CON MARGEN
+        // CÁLCULO DE PRECIOS
         function getPrecioFinal(prod) {
             const costoSoles = prod.precioUSD * config.tipoCambio;
             const margenDist = config.margenDistribuidor / 100;
@@ -1174,6 +2323,7 @@
 
         // ESTADOS DE FILTRO
         let currentCategory = 'Todas';
+        let currentSizeFilter = 'Todas';
         let currentSearch = '';
 
         // CATEGORÍAS DISPONIBLES
@@ -1189,15 +2339,15 @@
 
         // RENDER DE CATEGORÍAS
         function renderCategories() {
-            const container = document.getElementById('categoryPills');
+            const container = document.getElementById('categoryPillsRow');
             const categories = getCategories();
             container.innerHTML = categories.map(cat => `
-                <button class="pill-btn ${cat === currentCategory ? 'active' : ''}" data-cat="${cat}">
+                <button class="filter-pill-btn ${cat === currentCategory ? 'active' : ''}" data-cat="${cat}">
                     ${cat}
                 </button>
             `).join('');
 
-            container.querySelectorAll('.pill-btn').forEach(btn => {
+            container.querySelectorAll('.filter-pill-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     currentCategory = btn.getAttribute('data-cat');
                     renderCategories();
@@ -1206,23 +2356,66 @@
             });
         }
 
-        // RENDER DE PRODUCTOS
+        // RENDER DE FILTROS DE TALLA RÁPIDA
+        function renderSizeFilters() {
+            const container = document.getElementById('sizeFiltersRow');
+            const sizeOptions = ['Todas', 'XL', '2XL', '3XL', '4XL'];
+
+            container.innerHTML = sizeOptions.map(sz => `
+                <button class="size-pill-tag ${sz === currentSizeFilter ? 'active' : ''}" data-size="${sz}">
+                    ${sz === 'Todas' ? 'Todas las tallas' : sz}
+                </button>
+            `).join('');
+
+            container.querySelectorAll('.size-pill-tag').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentSizeFilter = btn.getAttribute('data-size');
+                    renderSizeFilters();
+                    renderProducts();
+                });
+            });
+        }
+
+        window.setQuickCategory = function(cat) {
+            currentCategory = cat;
+            renderCategories();
+            renderProducts();
+            const elem = document.getElementById('catalogo');
+            if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // RENDER DE PRODUCTOS CON PROPORCIÓN 3:4 Y DISEÑO EDITORIAL
         function renderProducts() {
-            const grid = document.getElementById('productosGrid');
+            const grid = document.getElementById('productsGridContainer');
             const search = currentSearch.toLowerCase().trim();
 
             const filtered = productos.filter(p => {
                 const matchCat = currentCategory === 'Todas' || p.categoria === currentCategory;
-                const matchSearch = p.nombre.toLowerCase().includes(search) || p.categoria.toLowerCase().includes(search);
-                return matchCat && matchSearch;
+                const matchSearch = p.nombre.toLowerCase().includes(search) || (p.categoria && p.categoria.toLowerCase().includes(search));
+                
+                let matchSize = true;
+                if (currentSizeFilter !== 'Todas') {
+                    matchSize = p.tallas && p.tallas.some(t => {
+                        const cleanT = t.toUpperCase().replace(/\s+/g, '');
+                        const target = currentSizeFilter.toUpperCase().replace(/\s+/g, '');
+                        return cleanT.includes(target) || (target === '2XL' && cleanT.includes('XXL')) || (target === '3XL' && cleanT.includes('3X'));
+                    });
+                }
+
+                return matchCat && matchSearch && matchSize;
             });
+
+            // Actualizar Contador
+            document.getElementById('catalogCountLabel').innerText = `${filtered.length} ${filtered.length === 1 ? 'prenda disponible' : 'prendas disponibles'}`;
+            document.getElementById('catalogSectionTitle').innerText = currentCategory === 'Todas' ? 'Toda la Colección' : `Colección: ${currentCategory}`;
 
             if (filtered.length === 0) {
                 grid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: #64748b;">
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4.5rem 1rem; color: var(--text-secondary); background: var(--card-bg-solid); border-radius: 1.5rem; border: 1px dashed var(--border-color);">
                         <span style="font-size: 3rem;">🔍</span>
-                        <h3 style="margin-top: 1rem; color: #0f172a;">No encontramos prendas con esa búsqueda</h3>
-                        <p style="font-size: 0.85rem; margin-top: 0.3rem;">Intenta con otra palabra o revisa nuestras categorías.</p>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; margin-top: 0.8rem; color: var(--primary);">No se encontraron prendas con este criterio</h3>
+                        <p style="font-size: 0.9rem; margin-top: 0.3rem; color: var(--text-muted);">Prueba limpiando los filtros o consultando por WhatsApp nuestro catálogo completo.</p>
+                        <button onclick="resetFilters()" class="btn-hero-secondary" style="margin-top: 1.2rem; padding: 0.6rem 1.4rem; font-size: 0.85rem;">Ver Todo el Catálogo</button>
                     </div>
                 `;
                 return;
@@ -1231,61 +2424,91 @@
             grid.innerHTML = filtered.map(prod => {
                 const precio = getPrecioFinal(prod);
                 const precioAntes = getPrecioOriginal(precio);
-                const currentSize = selectedSizes[prod.id] || prod.tallas[0];
+                const currentSize = selectedSizes[prod.id] || prod.tallas[0] || 'XL';
 
+                // Tallas
                 const sizesHTML = prod.tallas.map(t => `
-                    <button class="size-btn ${t === currentSize ? 'selected' : ''}" onclick="selectSize(${prod.id}, '${t}')">
+                    <button class="card-size-btn ${t === currentSize ? 'active' : ''}" onclick="selectSize(${prod.id}, '${t}')">
                         ${t}
                     </button>
                 `).join('');
 
-                const mensajeDirectoWA = `Hola UniversoPlus! Deseo comprar directamente esta prenda:\n\n👗 *${prod.nombre}*\n📏 *Talla elegida:* ${currentSize}\n💰 *Precio de Oferta:* S/ ${precio}\n🔗 Foto: ${prod.imagen}\n\n¿Tienen stock disponible para envío?`;
+                // Bolitas de Colores
+                const colorDotsHTML = (prod.colores || ['#3d1e38', '#c88a78']).map(c => `
+                    <span class="color-dot" style="background-color: ${c};" title="Variante disponible"></span>
+                `).join('');
+
+                const badgeText = prod.badge || "Nuevo";
                 const cleanPhone = config.whatsapp.replace(/\D/g, '');
+                const directWaMsg = `Hola UniversoPlus! Deseo pedir directamente esta prenda del catálogo:\n\n👗 *${prod.nombre}*\n📏 *Talla Elegida:* ${currentSize}\n💰 *Precio:* S/ ${precio.toFixed(2)}\n🔗 Foto: ${prod.imagen}\n\n¿Tienen disponibilidad para coordinar el envío? Gracias.`;
 
                 return `
-                    <div class="producto-card">
-                        <div class="img-area">
-                            <span class="badge-discount">-${config.ofertaDescuento}% OFF</span>
-                            <img class="producto-img" src="${prod.imagen}" alt="${prod.nombre}" loading="lazy">
+                    <article class="product-editorial-card">
+                        <div class="product-media-wrapper">
+                            <span class="badge-floating-corner">${badgeText}</span>
+                            <span class="badge-discount-tag">-${config.ofertaDescuento}% OFF</span>
+                            <img class="product-main-img" src="${prod.imagen}" alt="${prod.nombre}" loading="lazy">
+                            
+                            <div class="quick-view-overlay">
+                                <button class="btn-quick-add" onclick="addToCart(${prod.id})">
+                                    <span>🛍️</span> Agregar en Talla ${currentSize}
+                                </button>
+                            </div>
                         </div>
-                        <div class="card-info">
+
+                        <div class="product-info-block">
                             <div>
-                                <div class="card-meta">
-                                    <span class="categoria-tag">${prod.categoria}</span>
+                                <div class="product-meta-row">
+                                    <span>${prod.categoria || 'Moda Curvy'}</span>
+                                    <div class="color-swatches-row">
+                                        ${colorDotsHTML}
+                                    </div>
                                 </div>
-                                <h3 class="producto-nombre">${prod.nombre}</h3>
+                                <h3 class="product-item-title">${prod.nombre}</h3>
                             </div>
 
-                            <div class="size-section">
-                                <div class="size-label">
-                                    <span>Tallas Curvy disponibles:</span>
-                                    <span style="color: var(--primary);">Talla: ${currentSize}</span>
+                            <div class="size-selector-box">
+                                <div class="size-box-header">
+                                    <span>Talla seleccionada:</span>
+                                    <strong>${currentSize}</strong>
                                 </div>
-                                <div class="size-options">
+                                <div class="sizes-pill-list">
                                     ${sizesHTML}
                                 </div>
                             </div>
 
-                            <div class="precio-box">
-                                <span class="precio-actual">S/ ${precio.toFixed(2)}</span>
-                                <span class="precio-antes">S/ ${precioAntes.toFixed(2)}</span>
+                            <div class="product-pricing-row">
+                                <span class="current-price-tag">S/ ${precio.toFixed(2)}</span>
+                                <span class="regular-price-tag">S/ ${precioAntes.toFixed(2)}</span>
                             </div>
 
-                            <div class="card-actions">
-                                <button class="btn-add-cart" onclick="addToCart(${prod.id})">
-                                    🛍️ Agregar a mi Pedido
+                            <div class="card-action-buttons">
+                                <button class="btn-card-add-cart" onclick="addToCart(${prod.id})">
+                                    <span>🛍️</span> Agregar a Bolsa
                                 </button>
-                                <a href="https://wa.me/${cleanPhone}?text=${encodeURIComponent(mensajeDirectoWA)}" target="_blank" class="btn-wa-direct">
-                                    💬 Pedir solo esta por WhatsApp
+                                <a href="https://wa.me/${cleanPhone}?text=${encodeURIComponent(directWaMsg)}" target="_blank" class="btn-card-wa-direct" title="Pedir esta prenda sola por WhatsApp">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.676.15-.2.301-.776.979-.952 1.18-.176.2-.351.226-.652.075-.3-.151-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.3-.502.1-.2.05-.376-.025-.527-.075-.15-.676-1.631-.927-2.232-.244-.585-.492-.506-.676-.515-.175-.009-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.48 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.495 1.716.634.721.23 1.377.197 1.895.12.578-.087 1.78-.727 2.031-1.43.251-.703.251-1.305.176-1.43-.075-.126-.276-.201-.577-.351zM12.042 21.84a9.78 9.78 0 0 1-4.99-1.37l-.358-.213-3.71.973.99-3.616-.233-.371a9.788 9.788 0 0 1-1.5-5.203c0-5.419 4.41-9.829 9.83-9.829 2.625 0 5.093 1.023 6.949 2.879a9.78 9.78 0 0 1 2.876 6.946c0 5.42-4.41 9.833-9.854 9.833zm0-17.84c-4.43 0-8.033 3.604-8.033 8.033 0 1.416.368 2.8 1.067 4.024l.164.288-.636 2.327 2.383-.625.279.165a8.006 8.006 0 0 0 4.776 1.448c4.43 0 8.033-3.604 8.033-8.033 0-2.146-.836-4.164-2.353-5.681A7.99 7.99 0 0 0 12.042 4z"/>
+                                    </svg>
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 `;
             }).join('');
         }
 
-        // CAMBIAR TALLA SELECCIONADA
+        window.resetFilters = function() {
+            currentCategory = 'Todas';
+            currentSizeFilter = 'Todas';
+            currentSearch = '';
+            document.getElementById('searchInput').value = '';
+            renderCategories();
+            renderSizeFilters();
+            renderProducts();
+        };
+
+        // SELECCIÓN DE TALLA EN PRODUCTO
         window.selectSize = function(productId, size) {
             selectedSizes[productId] = size;
             renderProducts();
@@ -1296,7 +2519,7 @@
             const prod = productos.find(p => p.id === productId);
             if (!prod) return;
 
-            const size = selectedSizes[productId] || prod.tallas[0] || 'Estándar';
+            const size = selectedSizes[productId] || prod.tallas[0] || 'XL';
             const price = getPrecioFinal(prod);
 
             const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
@@ -1315,10 +2538,10 @@
             }
 
             saveCart();
-            showToast(`✨ Agregado: ${prod.nombre} (${size})`);
+            showLuxuryToast(`✨ Agregado: ${prod.nombre} (${size})`);
         };
 
-        // ACTUALIZAR CANTIDAD EN CARRITO
+        // MODIFICAR CANTIDAD EN CARRITO
         window.changeCartQty = function(index, delta) {
             if (!cart[index]) return;
             cart[index].qty += delta;
@@ -1328,79 +2551,81 @@
             saveCart();
         };
 
-        // ELIMINAR ITEM DEL CARRITO
+        // ELIMINAR ITEM DE CARRITO
         window.removeCartItem = function(index) {
             cart.splice(index, 1);
             saveCart();
         };
 
         // NOTIFICACIÓN TOAST
-        function showToast(text) {
-            const toast = document.getElementById('toastMessage');
+        function showLuxuryToast(text) {
+            const toast = document.getElementById('luxuryToast');
             toast.innerText = text;
             toast.classList.add('show');
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 2500);
+            }, 2600);
         }
 
-        // ACTUALIZAR INTERFAZ DEL CARRITO
+        // ACTUALIZACIÓN DE INTERFAZ DEL CARRITO
         function updateCartUI() {
             const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
             const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-            // Badges
+            // Actualizar Badges
             document.getElementById('cartCountBadge').innerText = totalItems;
-            document.getElementById('cartTotalItems').innerText = `${totalItems} ${totalItems === 1 ? 'prenda' : 'prendas'}`;
-            document.getElementById('cartTotalPrice').innerText = `S/ ${totalPrice.toFixed(2)}`;
+            document.getElementById('cartSummaryItemCount').innerText = `${totalItems} ${totalItems === 1 ? 'prenda' : 'prendas'}`;
+            document.getElementById('cartSummaryTotalPrice').innerText = `S/ ${totalPrice.toFixed(2)}`;
 
-            const container = document.getElementById('cartItemsContainer');
+            const container = document.getElementById('cartItemsList');
 
             if (cart.length === 0) {
                 container.innerHTML = `
-                    <div class="cart-empty-state">
+                    <div class="cart-empty-message">
                         <div class="cart-empty-icon">🛍️</div>
-                        <h4>Tu carrito está vacío</h4>
-                        <p style="font-size: 0.8rem;">Elige las prendas que te gusten del catálogo y agrégalas aquí para enviarlas juntas por WhatsApp.</p>
+                        <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--primary);">Tu bolsa está vacía</h4>
+                        <p style="font-size: 0.85rem; max-width: 280px;">Explora nuestra colección curvy y agrega las prendas que te gusten para consultarlas juntas por WhatsApp.</p>
                     </div>
                 `;
-                document.getElementById('cartFooter').style.display = 'none';
+                document.getElementById('cartDrawerFooter').style.display = 'none';
                 return;
             }
 
-            document.getElementById('cartFooter').style.display = 'flex';
+            document.getElementById('cartDrawerFooter').style.display = 'flex';
 
             container.innerHTML = cart.map((item, index) => `
-                <div class="cart-item">
-                    <img class="cart-item-img" src="${item.imagen}" alt="${item.nombre}">
-                    <div class="cart-item-details">
-                        <div class="cart-item-title">${item.nombre}</div>
-                        <div class="cart-item-size">Talla: ${item.size}</div>
-                        <div class="cart-item-price">S/ ${(item.price * item.qty).toFixed(2)}</div>
+                <div class="cart-item-row">
+                    <img src="${item.imagen}" alt="${item.nombre}" class="cart-item-thumbnail">
+                    <div class="cart-item-content">
+                        <div class="cart-item-name">${item.nombre}</div>
+                        <div class="cart-item-size-badge">Talla: ${item.size}</div>
+                        <div class="cart-item-price-unit">S/ ${(item.price * item.qty).toFixed(2)}</div>
                     </div>
-                    <div class="cart-item-qty">
-                        <button class="qty-btn" onclick="changeCartQty(${index}, -1)">-</button>
-                        <span class="qty-number">${item.qty}</span>
-                        <button class="qty-btn" onclick="changeCartQty(${index}, 1)">+</button>
+                    <div class="cart-item-actions">
+                        <div class="cart-item-qty-selector">
+                            <button class="btn-qty-step" onclick="changeCartQty(${index}, -1)">-</button>
+                            <span class="qty-val-display">${item.qty}</span>
+                            <button class="btn-qty-step" onclick="changeCartQty(${index}, 1)">+</button>
+                        </div>
+                        <button class="btn-trash-item" onclick="removeCartItem(${index})" title="Eliminar Prenda">🗑️</button>
                     </div>
-                    <button class="btn-remove-item" onclick="removeCartItem(${index})" title="Eliminar">🗑️</button>
                 </div>
             `).join('');
         }
 
-        // ENVIAR CARRITO POR WHATSAPP
-        document.getElementById('btnSendWhatsApp').addEventListener('click', () => {
+        // ENVIAR CARRITO COMPLETO POR WHATSAPP
+        document.getElementById('btnSubmitWhatsAppCart').addEventListener('click', () => {
             if (cart.length === 0) {
-                alert('Agrega al menos una prenda al carrito');
+                alert('Tu bolsa está vacía');
                 return;
             }
 
-            const name = document.getElementById('customerName').value.trim();
-            const city = document.getElementById('customerCity').value.trim();
+            const name = document.getElementById('custNameInput').value.trim();
+            const city = document.getElementById('custCityInput').value.trim();
 
             if (!name) {
-                alert('Por favor ingresa tu nombre para personalizar tu pedido.');
-                document.getElementById('customerName').focus();
+                alert('Por favor, ingresa tu Nombre para personalizar tu pedido.');
+                document.getElementById('custNameInput').focus();
                 return;
             }
 
@@ -1413,7 +2638,7 @@
             if (city) msg += `📍 *Ciudad / Destino:* ${city}\n`;
             msg += `📦 *Total prendas:* ${totalItems}\n\n`;
 
-            msg += `📋 *PRENDAS SELECCIONADAS:*\n`;
+            msg += `📋 *PRENDAS SELECCIONADAS (TALLAS CURVY):*\n`;
             cart.forEach((item, i) => {
                 msg += `\n${i + 1}. *${item.nombre}*\n`;
                 msg += `   • Talla: *${item.size}*\n`;
@@ -1424,7 +2649,7 @@
             msg += `\n━━━━━━━━━━━━━━━━━━━━━\n`;
             msg += `💰 *TOTAL A PAGAR:* *S/ ${totalPrice.toFixed(2)}*\n`;
             msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
-            msg += `✨ *¿Me confirman disponibilidad y medios de pago para coordinar el envío? Muchas gracias.*`;
+            msg += `✨ *¿Me confirman disponibilidad y medios de pago (Yape/Plin/Transferencia) para coordinar el envío? Muchas gracias.*`;
 
             const cleanPhone = config.whatsapp.replace(/\D/g, '');
             const targetUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
@@ -1436,21 +2661,44 @@
         const cartDrawer = document.getElementById('cartDrawer');
         const cartOverlay = document.getElementById('cartOverlay');
 
-        function openCart() {
+        function openCartDrawer() {
             cartDrawer.classList.add('open');
             cartOverlay.classList.add('open');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeCart() {
+        function closeCartDrawer() {
             cartDrawer.classList.remove('open');
             cartOverlay.classList.remove('open');
             document.body.style.overflow = '';
         }
 
-        document.getElementById('openCartBtn').addEventListener('click', openCart);
-        document.getElementById('closeCartBtn').addEventListener('click', closeCart);
-        cartOverlay.addEventListener('click', closeCart);
+        document.getElementById('btnOpenCart').addEventListener('click', openCartDrawer);
+        document.getElementById('btnCloseCart').addEventListener('click', closeCartDrawer);
+        cartOverlay.addEventListener('click', closeCartDrawer);
+
+        // MANEJO DE GUÍA DE TALLAS (MODAL)
+        const sizeModal = document.getElementById('sizeGuideModal');
+        function openSizeGuide() {
+            sizeModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeSizeGuide() {
+            sizeModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('btnOpenSizeGuideNav').addEventListener('click', openSizeGuide);
+        document.getElementById('btnHeroSizeGuide').addEventListener('click', openSizeGuide);
+        document.getElementById('btnOpenTableModal').addEventListener('click', openSizeGuide);
+        document.getElementById('footerSizeGuideLink').addEventListener('click', (e) => {
+            e.preventDefault();
+            openSizeGuide();
+        });
+        document.getElementById('btnCloseSizeModal').addEventListener('click', closeSizeGuide);
+        sizeModal.addEventListener('click', (e) => {
+            if (e.target === sizeModal) closeSizeGuide();
+        });
 
         // BÚSQUEDA EN TIEMPO REAL
         document.getElementById('searchInput').addEventListener('input', (e) => {
@@ -1459,24 +2707,29 @@
         });
 
         // MODAL DE ADMINISTRACIÓN RÁPIDA
-        const adminModal = document.getElementById('adminModal');
-        document.getElementById('openAdminLink').addEventListener('click', () => {
-            document.getElementById('admTC').value = config.tipoCambio;
-            document.getElementById('admMargen').value = config.margenDistribuidor;
-            document.getElementById('admDescuento').value = config.ofertaDescuento;
-            document.getElementById('admWA').value = config.whatsapp;
-            adminModal.style.display = 'flex';
+        const adminModal = document.getElementById('adminConfigModal');
+        document.getElementById('btnOpenAdminPanel').addEventListener('click', () => {
+            document.getElementById('cfgTC').value = config.tipoCambio;
+            document.getElementById('cfgMargen').value = config.margenDistribuidor;
+            document.getElementById('cfgDescuento').value = config.ofertaDescuento;
+            document.getElementById('cfgWhatsApp').value = config.whatsapp;
+            adminModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
 
-        document.getElementById('btnCancelAdmin').addEventListener('click', () => {
-            adminModal.style.display = 'none';
-        });
+        function closeAdminModal() {
+            adminModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('btnCloseAdminModal').addEventListener('click', closeAdminModal);
+        document.getElementById('btnCancelAdmin').addEventListener('click', closeAdminModal);
 
         document.getElementById('btnSaveAdmin').addEventListener('click', () => {
-            const tc = parseFloat(document.getElementById('admTC').value);
-            const mg = parseFloat(document.getElementById('admMargen').value);
-            const desc = parseFloat(document.getElementById('admDescuento').value);
-            const wa = document.getElementById('admWA').value.trim();
+            const tc = parseFloat(document.getElementById('cfgTC').value);
+            const mg = parseFloat(document.getElementById('cfgMargen').value);
+            const desc = parseFloat(document.getElementById('cfgDescuento').value);
+            const wa = document.getElementById('cfgWhatsApp').value.trim();
 
             if (!isNaN(tc)) config.tipoCambio = tc;
             if (!isNaN(mg)) config.margenDistribuidor = mg;
@@ -1484,17 +2737,18 @@
             if (wa) config.whatsapp = wa.replace(/\D/g, '');
 
             localStorage.setItem('universo_config', JSON.stringify(config));
-            adminModal.style.display = 'none';
+            closeAdminModal();
             renderProducts();
-            showToast('✅ Configuración actualizada');
+            showLuxuryToast('✅ Configuración actualizada con éxito');
         });
 
         adminModal.addEventListener('click', (e) => {
-            if (e.target === adminModal) adminModal.style.display = 'none';
+            if (e.target === adminModal) closeAdminModal();
         });
 
         // INICIALIZACIÓN
         renderCategories();
+        renderSizeFilters();
         renderProducts();
         updateCartUI();
     </script>
